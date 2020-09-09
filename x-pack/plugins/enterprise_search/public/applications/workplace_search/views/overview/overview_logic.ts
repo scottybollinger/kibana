@@ -24,7 +24,7 @@ export interface IOverviewServerData {
   activityFeed: IFeedActivity[];
   organization: IOrganization;
   isFederatedAuth: boolean;
-  fpAccount: IAccount;
+  account: IAccount;
 }
 
 export interface IOverviewActions {
@@ -54,10 +54,10 @@ export const OverviewLogic = kea<MakeLogicType<IOverviewValues, IOverviewActions
         setServerData: (_, { isFederatedAuth }) => isFederatedAuth,
       },
     ],
-    fpAccount: [
+    account: [
       {} as IAccount,
       {
-        setServerData: (_, { fpAccount }) => fpAccount,
+        setServerData: (_, { account }) => account,
       },
     ],
     canCreateInvitations: [

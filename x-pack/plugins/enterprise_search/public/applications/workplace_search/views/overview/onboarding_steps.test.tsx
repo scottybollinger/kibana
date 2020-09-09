@@ -62,7 +62,7 @@ describe('OnboardingSteps', () => {
       setMockValues({
         canCreateInvitations: true,
         isFederatedAuth: false,
-        fpAccount: account,
+        account,
         accountsCount: 0,
         hasUsers: false,
       });
@@ -78,7 +78,7 @@ describe('OnboardingSteps', () => {
     it('renders completed users state', () => {
       setMockValues({
         isFederatedAuth: false,
-        fpAccount: account,
+        account,
         accountsCount: 1,
         hasUsers: true,
       });

@@ -12,7 +12,7 @@ export const mockValues = {
   activityFeed: [],
   canCreateContentSources: false,
   canCreateInvitations: false,
-  fpAccount: {} as IAccount,
+  account: {} as IAccount,
   hasOrgSources: false,
   hasUsers: false,
   isFederatedAuth: true,

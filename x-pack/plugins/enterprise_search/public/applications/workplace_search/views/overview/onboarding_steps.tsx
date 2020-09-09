@@ -65,7 +65,7 @@ export const OnboardingSteps: React.FC = () => {
     canCreateInvitations,
     accountsCount,
     sourcesCount,
-    fpAccount: { isCurated },
+    account: { isCurated },
     organization: { name, defaultOrgName },
     isFederatedAuth,
   } = useValues(OverviewLogic);

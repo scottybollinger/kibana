@@ -22,6 +22,7 @@ import { SetupGuide } from './views/setup_guide';
 import { ErrorState } from './views/error_state';
 import { NotFound } from '../shared/not_found';
 import { Overview } from './views/overview';
+import { GroupsRouter } from './views/groups';
 
 export const WorkplaceSearch: React.FC<IInitialAppData> = (props) => {
   const { config } = useContext(KibanaContext) as IKibanaContext;
@@ -33,8 +34,26 @@ export const WorkplaceSearchConfigured: React.FC<IInitialAppData> = (props) => {
   const { initializeAppData } = useActions(AppLogic);
   const { errorConnecting } = useValues(HttpLogic);
 
+  // TODO: Replace with real data
+  const tempProps = {
+    ...props,
+    isFederatedAuth: false,
+    organization: {
+      name: 'FIXME',
+      defaultOrgName: 'Cats',
+    },
+    account: {
+      id: 'id',
+      groups: [],
+      isAdmin: true,
+      isCurated: false,
+      canCreatePersonalSources: true,
+      viewedOnboardingPage: true,
+    },
+  };
+
   useEffect(() => {
-    if (!hasInitialized) initializeAppData(props);
+    if (!hasInitialized) initializeAppData(tempProps);
   }, [hasInitialized]);
 
   return (
@@ -51,9 +70,8 @@ export const WorkplaceSearchConfigured: React.FC<IInitialAppData> = (props) => {
             <ErrorState />
           ) : (
             <Switch>
-              <Route exact path="/groups">
-                {/* Will replace with groups component subsequent PR */}
-                <div />
+              <Route path="/groups">
+                <GroupsRouter />
               </Route>
               <Route>
                 <NotFound product={WORKPLACE_SEARCH_PLUGIN} />

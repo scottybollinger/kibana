@@ -4,5 +4,4 @@
  * you may not use this file except in compliance with the Elastic License.
  */
 
-export { GroupsRouter } from './groups_router';
-export { GroupsLogic } from './groups_logic';
+export { DEFAULT_META } from './default_meta';

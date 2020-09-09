@@ -40,7 +40,7 @@ describe('OverviewLogic', () => {
       activityFeed: feed,
       canCreateContentSources: true,
       canCreateInvitations: true,
-      fpAccount: account,
+      account,
       hasOrgSources: true,
       hasUsers: true,
       isFederatedAuth: false,
@@ -62,7 +62,7 @@ describe('OverviewLogic', () => {
     it('will set server values', () => {
       expect(OverviewLogic.values.organization).toEqual(org);
       expect(OverviewLogic.values.isFederatedAuth).toEqual(false);
-      expect(OverviewLogic.values.fpAccount).toEqual(account);
+      expect(OverviewLogic.values.account).toEqual(account);
       expect(OverviewLogic.values.canCreateInvitations).toEqual(true);
       expect(OverviewLogic.values.hasUsers).toEqual(true);
       expect(OverviewLogic.values.hasOrgSources).toEqual(true);

@@ -60,6 +60,7 @@ export const callEnterpriseSearchConfigAPI = async ({
     const data = await response.json();
 
     return {
+      isFederatedAuth: !!data?.settings?.workplace_search?.is_federated_auth,
       access: {
         hasAppSearchAccess: !!data?.current_user?.access?.app_search,
         hasWorkplaceSearchAccess: !!data?.current_user?.access?.workplace_search,
